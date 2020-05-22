@@ -8,9 +8,9 @@
 
 def perform
   destroy
-  create_users
-  create_user_test
-  create_articles
+  #create_users
+  #create_user_test
+  #create_articles
 end
 
 def destroy
