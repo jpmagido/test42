@@ -10,6 +10,7 @@ def perform
   destroy
   create_users
   create_user_test
+  create_articles
 end
 
 def destroy
@@ -18,10 +19,10 @@ def destroy
 end
 
 def create_users
-  100.times do
+  50.times do
     FactoryBot.create(:user)
   end
-  p '100 users created ✅'
+  p '50 users created ✅'
 end
 
 def create_user_test
@@ -30,10 +31,10 @@ def create_user_test
 end
 
 def create_articles
-  100.times do
+  50.times do
     FactoryBot.create(:article)
   end
-  p '100 articles created ✅'
+  p '50 articles created ✅'
 end
 
 perform
