@@ -1,2 +1,6 @@
-<h1>StaticPages#user_page</h1>
-<p>Find me in app/views/static_pages/user_page.html.erb</p>
+<div>
+  <ul>
+    <li>Email personnel: <%= current_user.email %></li>
+    <li>Nombre d'articles crées: <%= current_user.articles.count %></li>
+  </ul>
+</div>
