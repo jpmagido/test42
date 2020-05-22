@@ -34,6 +34,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   gem 'ffaker', '~> 2.14'
+  gem 'factory_bot_rails', '~> 5.2'
+  gem 'rspec-expectations', '~> 3.9', '>= 3.9.2'
+  gem 'rspec-core', '~> 3.9', '>= 3.9.2'
+  gem 'rspec-mocks', '~> 3.9', '>= 3.9.1'
+  gem 'rspec-support', '~> 3.9', '>= 3.9.3'
+  gem 'shoulda-matchers', '~> 4.3'
 end
 
 group :development do
