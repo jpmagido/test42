@@ -1,4 +1,5 @@
 class MembershipsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @memberships = Membership.all
   end
