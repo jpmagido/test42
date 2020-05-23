@@ -10,6 +10,7 @@ class MembershipsController < ApplicationController
 
   def destroy
     find_membership.delete
+    redirect_to static_pages_user_page_path
   end
 
   private

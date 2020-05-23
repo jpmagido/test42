@@ -6,6 +6,7 @@
       <div>titre du groupe: <%= membership.group.title %></div>
       <div>Membre: <%= membership.user.email %></div>
       <div>Date d'adhésion: <%= membership.created_at %></div>
+      <div> <%= link_to 'Voir abonnement', membership_path(membership.id) %></div>
       <br>
     </div>
   <% end %>

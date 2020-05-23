@@ -1,2 +1,9 @@
-<h1>Memberships#show</h1>
-<p>Find me in app/views/memberships/show.html.erb</p>
+<div class="container">
+  <h4>Email de l'abonné: <%= @membership.user.email %></h4>
+  <h5>Titre du groupe: <%= @membership.group.title %></h5>
+  <h6>Description du groupe:</h6>
+  <p> <%= @membership.group.description %> </p>
+
+  <p> Date d'abonnement: <%= @membership.created_at %></p>
+  <p><%= link_to "Supprimer l'abonnement", membership_path(@membership.id), method: :delete, data: {confirm: "Êtes-vous certain ? "} %></p>
+</div>

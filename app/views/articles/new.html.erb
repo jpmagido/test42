@@ -1,10 +1,10 @@
-<div>
+<div class="container">
   <%= simple_form_for @article do |f| %>
     <%= f.input :title, label: "Titre de l'article" %>
     <%= f.input :content, label: "Corps de l'article" %>
-    <%= f.association :user, as: :hidden, input_html: { value: current_user.id } %>
-
+    <%= f.association :user, as: :hidden, input_html: {value: current_user.id} %>
     <%= f.button :submit %>
   <% end %>
+  <%= link_to 'Retour', :back %>
 </div>
 

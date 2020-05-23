@@ -1,13 +1,17 @@
-<div>
+<div class="container">
+  <div>
+    <%= link_to 'Créer un article', new_article_path, class: 'btn btn-primary' %>
+  </div>
+  <br>
   <ul>
-  <% @articles.each do |article| %>
-    <li>Titre de l'article: <%= article.title %></li>
-    <li>Contenu: <%= article.content %></li>
-    <li>Auteur: <%= article.user.email %></li>
-    <li> <%= link_to 'Page Article', article_path(article.id) %></li>
-    <li> <%= link_to 'Modifier Article', edit_article_path(article.id) %></li>
-    <li> <%= link_to 'Supprimer', article_path(article.id), method: :delete, data: { confirm: "Êtes-vous certain ? " } %></li>
+    <% @articles.each do |article| %>
+      <li>Titre de l'article: <%= article.title %></li>
+      <li>Contenu: <%= article.content %></li>
+      <li>Auteur: <%= article.user.email %></li>
+      <li> <%= link_to 'Page Article', article_path(article.id) %></li>
+      <li> <%= link_to 'Modifier Article', edit_article_path(article.id) %></li>
+      <li> <%= link_to 'Supprimer', article_path(article.id), method: :delete, data: {confirm: "Êtes-vous certain ? "} %></li>
       <br>
-  <% end %>
+    <% end %>
   </ul>
 </div>

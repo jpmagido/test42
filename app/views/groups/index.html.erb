@@ -1,4 +1,8 @@
-<div>
+<div class="container">
+  <div>
+    <%= link_to 'Créer un groupe', new_group_path, class: 'btn btn-primary' %>
+  </div>
+  <br>
   <ul>
     <% @groups.each do |group| %>
       <li>Titre du groupe: <%= group.title %></li>
