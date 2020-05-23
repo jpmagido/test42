@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Articles", type: :request do
   let(:user) { create(:user) }
-  let(:article) { create(:article) }
+  let!(:article) { create(:article) }
 
   describe 'User signed_in' do
     before { sign_in user }
@@ -28,8 +28,7 @@ RSpec.describe "Articles", type: :request do
     end
 
     it 'should return success on destroy' do
-      delete article_path(article.id)
-      expect(response).to have_http_status(:success)
+      expect { article.destroy }.to change { Article.count }.by(-1)
     end
   end
 

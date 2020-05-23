@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b87e742-e443-42f0-ae9b-430e5d31760f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/static_pages/user_page.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/static_pages/user_page.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/requests/articles_request_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/articles_request_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +163,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590164407842</updated>
-      <workItem from="1590164409696" duration="13389000" />
+      <workItem from="1590164409696" duration="14043000" />
     </task>
     <servers />
   </component>
@@ -173,6 +171,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="508" y="380" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590191831156">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="508" y="380" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1590191831156" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1590191372202">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
