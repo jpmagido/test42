@@ -1,6 +1,6 @@
 class MembershipsController < ApplicationController
   def index
-    Membership.all
+    @memberships = Membership.all
   end
 
   def show
@@ -14,6 +14,6 @@ class MembershipsController < ApplicationController
   private
 
   def find_membership
-    @membership= Membership.find(params[:id])
+    @membership = Membership.find(params[:id])
   end
 end

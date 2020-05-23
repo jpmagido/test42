@@ -1,6 +1,19 @@
-<div>
+<div class="container">
   <ul>
     <li>Email personnel: <%= current_user.email %></li>
     <li>Nombre d'articles crées: <%= current_user.articles.count %></li>
   </ul>
+  <h5>Mes groupes: <%= current_user.memberships.count %></h5>
+  <% current_user.memberships.each do |membership| %>
+    <ul>
+      <li>Titre: <%= membership.group.title %></li>
+      <li>Description: <%= membership.group.description %></li>
+      <li>Créateur: <%= membership.group.user.email %></li>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= link_to 'Modifier mon profil', edit_user_registration_path %>
+    <%= button_to('Me déconnecter', destroy_user_session_path, method: :delete) %>
+  </div>
 </div>

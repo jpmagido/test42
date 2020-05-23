@@ -1,8 +1,10 @@
-<div>
-  <ul>
-    <li>Numéto de l'article: <%= @article.id %></li>
-    <li>Titre de l'article: <%= @article.title %></li>
-    <li>Contenu de l'article: <%= @article.content %></li>
-    <li>Auteur: <%= @article.user.email %></li>
-  </ul>
+<div class="container">
+  <h3>Titre de l'article: <%= @article.title %></h3>
+  <h5>Numéro de l'article: <%= @article.id %></h5>
+  <h5>Contenu de l'article:</h5>
+  <p>
+    <%= @article.content %>
+  </p>
+    <h5> Auteur: <%= @article.user.email %></h5>
+  <%= link_to 'retour', :back %>
 </div>

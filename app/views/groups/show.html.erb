@@ -1,27 +1,26 @@
-<div>
+<div class="container">
+  <h2> Groupe: <%= @group.title %> </h2>
+  <h5> Description: </h5>
+  <br>
+  <p> <%= @group.description %> </p>
+  <br>
+  <h6> Auteur: <%= @group.user.email %> </h6>
+  <br>
+  <h6> Membres: </h6>
   <ul>
-    <li>Titre du groupe: <%= @group.title %></li>
-    <li>Description: <%= @group.description %></li>
-    <li>Auteur: <%= @group.user.email %></li>
-    <li>Membres:</li>
-    <ul>
-      <% @group.memberships.each do |member| %>
-        <% if member.user == current_user %>
-          <li> <%= member.user.email %>
-            <%= link_to 'Voir Abonnement', membership_path(member.id) %>
-          </li>
-        <% end %>
+    <% @group.memberships.each do |membership| %>
+        <li> <%= membership.user.email %>
+      <% if membership.user == current_user %>
+          <%= link_to 'Voir Abonnement', membership_path(membership.id) %>
+        </li>
       <% end %>
-    </ul>
-    <br>
-    <li><%= link_to 'Page du groupe', group_path(@group.id) %></li>
-    <li><%= link_to 'Modifier le groupe', edit_group_path(@group.id) %></li>
-    <li><%= link_to 'Supprimer', group_path(@group.id), method: :delete, data: {confirm: "Êtes-vous certain ? "} %></li>
-    <li><%= link_to 'retour', :back %></li>
-    <% unless @group.memberships.map(&:user).include?(current_user) %>
-      <li>
-        <%= button_to 'Rejoindre', {:action => 'create_membership', :user_id => current_user.id, :group_id => @group.id}, {:method => :post} %>
-      </li>
     <% end %>
+    <br>
+    <li><%= link_to 'Modifier le groupe', edit_group_path(@group.id) %></li>
+    <li><%= link_to 'Supprimer le groupe', group_path(@group.id), method: :delete, data: {confirm: "Êtes-vous certain ? "} %></li>
   </ul>
+  <%= link_to 'retour', :back %>
+  <% unless @group.memberships.map(&:user).include?(current_user) %>
+    <%= button_to 'Rejoindre', {:action => 'create_membership', :user_id => current_user.id, :group_id => @group.id}, {:method => :post} %>
+  <% end %>
 </div>

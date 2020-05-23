@@ -1,2 +1,12 @@
-<h1>Memberships#index</h1>
-<p>Find me in app/views/memberships/index.html.erb</p>
+<div class="container">
+  <h3>Tous les abonnements</h3>
+  <br>
+  <% @memberships.each do |membership| %>
+    <div>
+      <div>titre du groupe: <%= membership.group.title %></div>
+      <div>Membre: <%= membership.user.email %></div>
+      <div>Date d'adhésion: <%= membership.created_at %></div>
+      <br>
+    </div>
+  <% end %>
+</div>
