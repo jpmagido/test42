@@ -1,6 +1,11 @@
 require 'ffaker'
 
 FactoryBot.define do
+  factory :user do
+    email { FFaker::Internet.email }
+    password { 'blablabla' }
+  end
+
   factory :membership do
     association :user
     association :group
@@ -9,12 +14,7 @@ FactoryBot.define do
   factory :group do
     title { FFaker::Book.title }
     description { FFaker::Book.description }
-  end
-
-
-  factory :user do
-    email { FFaker::Internet.email }
-    password { 'blablabla' }
+    association :user
   end
 
   factory :article do

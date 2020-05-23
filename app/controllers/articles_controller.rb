@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params_article)
     @article.save!
-    redirect_to root_path
+    redirect_to articles_path
   end
 
   def show
@@ -25,12 +25,16 @@ class ArticlesController < ApplicationController
 
   def update
     find_article.update!(params_article)
-    redirect_to root_path
+    redirect_to articles_path
   end
 
   def destroy
     find_article.delete
-    redirect_to root_path
+    redirect_to articles_path
+  end
+
+  def create_membership
+    Membership.new
   end
 
   private

@@ -9,4 +9,6 @@ RSpec.describe Membership, type: :model do
 
   it { should belong_to(:user) }
   it { should belong_to(:group) }
+  it { should have_db_index(:user_id) }
+  it { should have_db_index(:group_id) }
 end

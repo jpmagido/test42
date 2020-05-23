@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(version: 2020_05_23_104726) do
   create_table "groups", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -57,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_05_23_104726) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "groups", "users"
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "users"
 end

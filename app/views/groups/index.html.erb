@@ -1,2 +1,13 @@
-<h1>Groups#index</h1>
-<p>Find me in app/views/groups/index.html.erb</p>
+<div>
+  <ul>
+    <% @groups.each do |group| %>
+      <li>Titre du groupe: <%= group.title %></li>
+      <li>Description: <%= group.description %></li>
+      <li>Auteur: <%= group.user.email %></li>
+      <li><%= link_to 'Page du groupe', group_path(group.id) %></li>
+      <li><%= link_to 'Modifier le groupe', edit_group_path(group.id) %></li>
+      <li><%= link_to 'Supprimer', group_path(group.id), method: :delete, data: { confirm: "Êtes-vous certain ? " } %></li>
+      <br>
+    <% end %>
+  </ul>
+</div>

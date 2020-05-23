@@ -11,9 +11,13 @@ def perform
   create_users
   create_user_test
   create_articles
+  create_groups
+  create_memberships
 end
 
 def destroy
+  Membership.destroy_all
+  Group.destroy_all
   Article.destroy_all
   User.destroy_all
 end
@@ -26,7 +30,7 @@ def create_users
 end
 
 def create_user_test
-  User.new(email: 'test@test.com', password: 'blablabla')
+  User.create!(email: 'test@test.com', password: 'blablabla')
   p "User created; password: 'blablabla', email: 'test@test.com' ✅"
 end
 
@@ -35,6 +39,20 @@ def create_articles
     FactoryBot.create(:article)
   end
   p '50 articles created ✅'
+end
+
+def create_groups
+  10.times do
+    FactoryBot.create(:group)
+  end
+  p '10 groups created ✅'
+end
+
+def create_memberships
+  15.times do
+    FactoryBot.create(:membership)
+  end
+  p '15 memberships created ✅'
 end
 
 perform
