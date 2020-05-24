@@ -30,6 +30,7 @@ def create_users
 end
 
 def create_user_test
+  User.create!(email: 'jpmagido@me.com', password: 'blablabla')
   User.create!(email: 'test@test.com', password: 'blablabla')
   p "User created; password: 'blablabla', email: 'test@test.com' ✅"
 end

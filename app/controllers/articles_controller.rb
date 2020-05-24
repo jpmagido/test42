@@ -1,35 +1,27 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource param_method: :params_article
+  # before_action :authenticate_user!
 
-  def index
-    @articles = Article.all
-  end
+  def index; end
 
-  def new
-    @article = Article.new
-  end
+  def new; end
 
   def create
-    @article = Article.new(params_article)
-    @article.save!
-    redirect_to articles_path
+    @article = Article.create!(params_article)
+    redirect_to article_path(@article.id)
   end
 
-  def show
-    find_article
-  end
+  def show; end
 
-  def edit
-    find_article
-  end
+  def edit; end
 
   def update
-    find_article.update!(params_article)
-    redirect_to articles_path
+    @article.update!(params_article)
+    redirect_to article_path(@article.id)
   end
 
   def destroy
-    find_article.delete
+    @article.delete
     redirect_to articles_path
   end
 
@@ -41,9 +33,5 @@ class ArticlesController < ApplicationController
 
   def params_article
     params.require(:article).permit(:title, :content, :user_id)
-  end
-
-  def find_article
-    @article = Article.find(params[:id])
   end
 end

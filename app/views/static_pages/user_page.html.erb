@@ -6,9 +6,11 @@
   <h5>Mes groupes: <%= current_user.memberships.count %></h5>
   <% current_user.memberships.each do |membership| %>
     <ul>
-      <li>Titre: <%= membership.group.title %></li>
-      <li>Description: <%= membership.group.description %></li>
-      <li>Créateur: <%= membership.group.user.email %></li>
+      <li> Titre: <%= membership.group.title %> </li>
+      <li> Description: <%= membership.group.description %> </li>
+      <li> Créateur: <%= membership.group.user.email %> </li>
+      <li> <%= link_to 'Le groupe', group_path(membership.group.id) %> </li>
+      <li> <%= link_to 'Supprimer mon abonnement', membership_path(membership.id), method: :delete, data: {confirm: "Êtes-vous certain(e) ?"} %> </li>
     </ul>
   <% end %>
 

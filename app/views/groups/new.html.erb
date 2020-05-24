@@ -2,6 +2,7 @@
   <%= simple_form_for @group do |f| %>
     <%= f.input :title, label: 'Titre du groupe' %>
     <%= f.input :description, label: 'Description' %>
+    <%= f.association :user, as: :hidden, input_html: {value: current_user.id} %>
     <%= f.button :submit %>
   <% end %>
   <%= link_to 'Retour', :back %>

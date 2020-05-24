@@ -6,6 +6,11 @@ FactoryBot.define do
     password { 'blablabla' }
   end
 
+  factory :admin, class: User do
+    email { 'jpmagido@me.com' }
+    password { 'blablabla' }
+  end
+
   factory :membership do
     association :user
     association :group

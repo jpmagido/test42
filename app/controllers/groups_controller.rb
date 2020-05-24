@@ -1,35 +1,26 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource param_method: :params_group
 
-  def index
-    @groups = Group.all
-  end
+  def index; end
 
-  def new
-    @group = Group.new
-  end
+  def new; end
 
   def create
-    @group = Group.new(params_group)
-    @group.save!
-    redirect_to groups_path
+    @group = Group.create!(params_group)
+    redirect_to group_path(@group.id)
   end
 
-  def show
-    find_group
-  end
+  def show; end
 
-  def edit
-    find_group
-  end
+  def edit; end
 
   def update
-    find_group.update!(params_group)
-    redirect_to groups_path
+    @group.update!(params_group)
+    redirect_to group_path(@group.id)
   end
 
   def destroy
-    find_group.delete
+    @group.delete
     redirect_to groups_path
   end
 
@@ -42,9 +33,5 @@ class GroupsController < ApplicationController
 
   def params_group
     params.require(:group).permit(:title, :description, :user_id, :group_id)
-  end
-
-  def find_group
-    @group = Group.find(params[:id])
   end
 end
